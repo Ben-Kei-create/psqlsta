@@ -59,8 +59,9 @@ struct HomeView: View {
                 .foregroundColor(.headerBrown)
 
             Text("今日のレッスンメニュー")
-                .font(.japaneseBody(size: 14))
                 .font(.system(size: 14))
+                .foregroundColor(.subtleText)
+
             progressBar
                 .padding(.top, 8)
         }
