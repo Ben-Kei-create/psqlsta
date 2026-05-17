@@ -25,7 +25,7 @@ struct SQLQueryEditorView: View {
 }
 
 #Preview {
-    @Previewable @State var queryText = "SELECT * FROM coffees WHERE price < 500"
+    @State var queryText = "SELECT * FROM coffees WHERE price < 500"
     return SQLQueryEditorView(queryText: $queryText)
         .padding()
 }
