@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1024" height="1024" fill="#C08A3E"/>
+
+  <!-- Coffee Cup Body -->
+  <g>
+    <!-- Cup outer shape -->
+    <path d="M 280 380 L 300 280 Q 300 220 340 220 L 684 220 Q 724 220 724 280 L 744 380 Q 744 420 710 440 L 314 440 Q 280 420 280 380 Z"
+          fill="white" stroke="white" stroke-width="0"/>
+
+    <!-- Cup inner highlight (left side) -->
+    <path d="M 320 250 L 330 380 Q 330 410 350 420 L 360 280 Q 360 240 370 230 Z"
+          fill="none" stroke="white" stroke-width="24" stroke-linecap="round" opacity="0.3"/>
+
+    <!-- Handle -->
+    <path d="M 740 300 Q 820 300 820 380 Q 820 460 740 460"
+          fill="none" stroke="white" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- SQL Brackets < > -->
+  <g>
+    <!-- Left bracket < -->
+    <path d="M 380 480 L 430 550 L 380 620"
+          fill="none" stroke="white" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- SQL text indicator (tiny) -->
+    <text x="512" y="620" font-family="system-ui, -apple-system" font-size="48" font-weight="600"
+          fill="white" text-anchor="middle" letter-spacing="2">SQL</text>
+
+    <!-- Right bracket > -->
+    <path d="M 644 480 L 594 550 L 644 620"
+          fill="none" stroke="white" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Coffee line accent -->
+  <line x1="340" y1="400" x2="660" y2="400" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+</svg>
