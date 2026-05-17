@@ -1,4 +1,5 @@
 import SwiftUI
+import Combine
 
 @MainActor
 final class SQLEditorViewModel: ObservableObject {
@@ -9,7 +10,11 @@ final class SQLEditorViewModel: ObservableObject {
     @Published var isExecuting: Bool = false
 
     // MARK: - Initialization
-    init(problem: Problem = .sampleLesson1) {
+    init() {
+        self.currentProblem = .sampleLesson1
+    }
+
+    init(problem: Problem) {
         self.currentProblem = problem
     }
 
