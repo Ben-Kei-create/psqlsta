@@ -4,7 +4,7 @@ import SwiftUI
 struct SQLCafeApp: App {
     var body: some Scene {
         WindowGroup {
-            SQLEditorView()
+            HomeView()
         }
     }
 }
