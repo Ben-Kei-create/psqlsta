@@ -4,31 +4,32 @@ struct NavigationBarView: View {
     let title: String
 
     var body: some View {
-        HStack {
+        HStack(spacing: 12) {
             Button(action: {}) {
                 Image(systemName: "chevron.left")
-                    .font(.system(size: 16, weight: .semibold))
-                    .foregroundColor(.headerBrown)
+                    .font(.system(size: 15, weight: .semibold))
+                    .foregroundColor(.accentGold)
             }
 
             Spacer()
 
             Text(title)
-                .font(.system(size: 16, weight: .semibold))
+                .font(.system(size: 15, weight: .semibold))
                 .foregroundColor(.headerBrown)
+                .lineLimit(1)
 
             Spacer()
 
             Button(action: {}) {
                 Image(systemName: "ellipsis")
-                    .font(.system(size: 16, weight: .semibold))
-                    .foregroundColor(.headerBrown)
+                    .font(.system(size: 15, weight: .semibold))
+                    .foregroundColor(.accentGold)
             }
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 12)
+        .padding(.horizontal, 14)
+        .padding(.vertical, 10)
         .background(Color.appBackground)
-        .border(Color.borderColor, width: 1)
+        .border(Color.accentGold.opacity(0.2), width: 1)
     }
 }
 

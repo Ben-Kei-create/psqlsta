@@ -35,7 +35,7 @@ struct HomeView: View {
             VStack(spacing: 0) {
                 header
 
-                VStack(spacing: 12) {
+                VStack(spacing: 10) {
                     ForEach(Problem.allLessons) { lesson in
                         LessonCard(
                             lesson: lesson,
@@ -47,27 +47,27 @@ struct HomeView: View {
                     }
                 }
                 .padding(.horizontal, 16)
-                .padding(.bottom, 32)
+                .padding(.bottom, 24)
             }
         }
     }
 
     private var header: some View {
-        VStack(spacing: 4) {
+        VStack(spacing: 3) {
             Text("☕ SQL Cafe")
-                .font(.system(size: 28, weight: .heavy))
+                .font(.system(size: 26, weight: .heavy))
                 .foregroundColor(.headerBrown)
 
-            Text("今日のレッスンメニュー")
-                .font(.system(size: 14))
+            Text("今日のレッスン")
+                .font(.system(size: 13))
                 .foregroundColor(.subtleText)
 
             progressBar
-                .padding(.top, 8)
+                .padding(.top, 6)
         }
         .padding(.horizontal, 16)
-        .padding(.top, 24)
-        .padding(.bottom, 20)
+        .padding(.top, 16)
+        .padding(.bottom, 16)
     }
 
     private var progressBar: some View {
@@ -114,36 +114,37 @@ private struct LessonCard: View {
 
     var body: some View {
         Button(action: { if !isLocked { onTap() } }) {
-            HStack(spacing: 14) {
+            HStack(spacing: 12) {
                 // アイコン
                 ZStack {
                     Circle()
                         .fill(iconBackground)
-                        .frame(width: 44, height: 44)
+                        .frame(width: 42, height: 42)
                     if isLocked {
                         Image(systemName: "lock.fill")
-                            .font(.system(size: 16))
+                            .font(.system(size: 15))
                             .foregroundColor(.subtleText)
                     } else if isCompleted {
                         Image(systemName: "checkmark")
-                            .font(.system(size: 18, weight: .bold))
+                            .font(.system(size: 16, weight: .bold))
                             .foregroundColor(.white)
                     } else {
                         Text("\(lesson.lessonNumber)")
-                            .font(.system(size: 16, weight: .bold))
+                            .font(.system(size: 15, weight: .bold))
                             .foregroundColor(.white)
                     }
                 }
 
                 // テキスト
-                VStack(alignment: .leading, spacing: 4) {
+                VStack(alignment: .leading, spacing: 2) {
                     Text("Lesson \(lesson.lessonNumber)")
-                        .font(.system(size: 11, weight: .semibold))
+                        .font(.system(size: 10, weight: .semibold))
                         .foregroundColor(isLocked ? .subtleText : .accentGold)
 
                     Text(lesson.title)
-                        .font(.system(size: 15, weight: .semibold))
+                        .font(.system(size: 14, weight: .semibold))
                         .foregroundColor(isLocked ? .subtleText : .headerBrown)
+                        .lineLimit(1)
 
                     difficultyStars
                 }
@@ -152,14 +153,15 @@ private struct LessonCard: View {
 
                 if !isLocked {
                     Image(systemName: isCompleted ? "checkmark.circle.fill" : "chevron.right")
-                        .foregroundColor(isCompleted ? .successGreen : .borderColor)
+                        .font(.system(size: 14))
+                        .foregroundColor(isCompleted ? .successGreen : Color.accentGold.opacity(0.6))
                 }
             }
-            .padding(16)
+            .padding(14)
             .background(cardBackground)
-            .cornerRadius(10)
+            .cornerRadius(8)
             .overlay(
-                RoundedRectangle(cornerRadius: 10)
+                RoundedRectangle(cornerRadius: 8)
                     .stroke(cardBorder, lineWidth: 1.5)
             )
             .opacity(isLocked ? 0.5 : 1.0)
@@ -184,13 +186,13 @@ private struct LessonCard: View {
     }
 
     private var cardBackground: Color {
-        isCompleted ? Color.successGreen.opacity(0.05) : Color.white.opacity(0.8)
+        isCompleted ? Color.successGreen.opacity(0.08) : Color.white.opacity(0.82)
     }
 
     private var cardBorder: Color {
-        if isCompleted { return Color.successGreen.opacity(0.4) }
+        if isCompleted { return Color.successGreen.opacity(0.5) }
         if isLocked { return Color.borderColor.opacity(0.2) }
-        return Color.borderColor.opacity(0.4)
+        return Color.accentGold.opacity(0.3)
     }
 }
 

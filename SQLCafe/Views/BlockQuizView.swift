@@ -20,8 +20,19 @@ struct BlockQuizView: View {
             VStack(spacing: 0) {
                 NavigationBarView(title: "Lesson \(vm.problem.lessonNumber)")
 
-                ScrollView {
-                    VStack(spacing: 16) {
+                // Main content - fits on screen without scrolling
+                if showResultTable {
+                    // Result screen with scrollable table
+                    ScrollView {
+                        VStack(spacing: 12) {
+                            resultTable
+                                .padding(12)
+                        }
+                        .padding(.bottom, 40)
+                    }
+                } else {
+                    // Quiz screen - no scroll needed
+                    VStack(spacing: 10) {
                         problemCard
 
                         answerArea
@@ -30,14 +41,11 @@ struct BlockQuizView: View {
                             blockPalette
                         }
 
-                        actionButton
+                        Spacer(minLength: 0)
 
-                        if showResultTable {
-                            resultTable
-                        }
+                        actionButton
                     }
-                    .padding(16)
-                    .padding(.bottom, 40)
+                    .padding(12)
                 }
             }
         }
@@ -60,78 +68,80 @@ struct BlockQuizView: View {
     // MARK: - Subviews
 
     private var problemCard: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            HStack {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(spacing: 8) {
                 Image(systemName: "person.fill")
+                    .font(.system(size: 14))
                     .foregroundColor(.accentGold)
                 Text("マスターからの指示")
-                    .font(.system(size: 12, weight: .semibold))
+                    .font(.system(size: 11, weight: .semibold))
                     .foregroundColor(.accentGold)
                 Spacer()
                 Button {
                     withAnimation { vm.showHint.toggle() }
                 } label: {
                     Text("ヒント")
-                        .font(.system(size: 12, weight: .semibold))
+                        .font(.system(size: 11, weight: .semibold))
                         .foregroundColor(.accentGold)
-                        .padding(.horizontal, 10)
-                        .padding(.vertical, 4)
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 3)
                         .overlay(
-                            RoundedRectangle(cornerRadius: 12)
+                            RoundedRectangle(cornerRadius: 10)
                                 .stroke(Color.accentGold, lineWidth: 1)
                         )
                 }
             }
 
             Text(vm.problem.description)
-                .font(.system(size: 16, weight: .semibold))
+                .font(.system(size: 14, weight: .semibold))
                 .foregroundColor(.headerBrown)
+                .lineLimit(nil)
 
             if vm.showHint {
-                HStack(spacing: 6) {
+                HStack(spacing: 5) {
                     Image(systemName: "lightbulb.fill")
+                        .font(.system(size: 12))
                         .foregroundColor(.accentGold)
                     Text(vm.problem.hint)
-                        .font(.system(size: 13))
+                        .font(.system(size: 12))
                         .foregroundColor(.headerBrown)
                 }
-                .padding(10)
-                .background(Color.accentGold.opacity(0.1))
+                .padding(8)
+                .background(Color.accentGold.opacity(0.12))
                 .cornerRadius(6)
             }
         }
-        .padding(16)
-        .background(Color.white.opacity(0.8))
+        .padding(12)
+        .background(Color.white.opacity(0.85))
         .cornerRadius(8)
         .overlay(
             RoundedRectangle(cornerRadius: 8)
-                .stroke(Color.borderColor.opacity(0.5), lineWidth: 1)
+                .stroke(Color.accentGold.opacity(0.3), lineWidth: 1.5)
         )
     }
 
     private var answerArea: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: 6) {
             Text("あなたの回答")
-                .font(.system(size: 12, weight: .semibold))
+                .font(.system(size: 11, weight: .semibold))
                 .foregroundColor(.headerBrown)
 
             ZStack(alignment: .topLeading) {
-                // 背景（エディタ風）
-                RoundedRectangle(cornerRadius: 8)
+                RoundedRectangle(cornerRadius: 6)
                     .fill(Color.editorBackground)
-                    .frame(minHeight: 80)
+                    .frame(minHeight: 60)
                     .overlay(
-                        RoundedRectangle(cornerRadius: 8)
+                        RoundedRectangle(cornerRadius: 6)
                             .stroke(borderStrokeColor, lineWidth: 2)
                     )
 
                 if placedBlocks.isEmpty {
                     Text("ブロックをタップして並べよう")
-                        .font(.system(size: 13, design: .monospaced))
+                        .font(.system(size: 12, design: .monospaced))
                         .foregroundColor(.subtleText)
-                        .padding(12)
+                        .padding(10)
                 } else {
-                    FlowLayout(spacing: 6) {
+                    FlowLayout(spacing: 5) {
                         ForEach(vm.placedBlocks) { block in
                             Button {
                                 vm.removeBlock(block)
@@ -145,7 +155,7 @@ struct BlockQuizView: View {
                             .disabled(vm.quizState != .answering)
                         }
                     }
-                    .padding(10)
+                    .padding(8)
                 }
             }
             .modifier(ShakeModifier(trigger: incorrectShake))
@@ -153,12 +163,12 @@ struct BlockQuizView: View {
     }
 
     private var blockPalette: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: 6) {
             Text("ブロック")
-                .font(.system(size: 12, weight: .semibold))
+                .font(.system(size: 11, weight: .semibold))
                 .foregroundColor(.headerBrown)
 
-            FlowLayout(spacing: 8) {
+            FlowLayout(spacing: 6) {
                 ForEach(vm.availableBlocks) { block in
                     Button {
                         vm.placeBlock(block)
@@ -167,12 +177,12 @@ struct BlockQuizView: View {
                     }
                 }
             }
-            .padding(12)
-            .background(Color.white.opacity(0.6))
-            .cornerRadius(8)
+            .padding(10)
+            .background(Color.accentGold.opacity(0.08))
+            .cornerRadius(6)
             .overlay(
-                RoundedRectangle(cornerRadius: 8)
-                    .stroke(Color.borderColor.opacity(0.4), lineWidth: 1)
+                RoundedRectangle(cornerRadius: 6)
+                    .stroke(Color.accentGold.opacity(0.3), lineWidth: 1)
             )
         }
     }
@@ -185,12 +195,12 @@ struct BlockQuizView: View {
                     vm.submitAnswer()
                 } label: {
                     Text("確認する")
-                        .font(.system(size: 16, weight: .bold))
+                        .font(.system(size: 15, weight: .bold))
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
-                        .padding(.vertical, 14)
-                        .background(vm.placedBlocks.isEmpty ? Color.borderColor : Color.accentGold)
-                        .cornerRadius(8)
+                        .padding(.vertical, 12)
+                        .background(vm.placedBlocks.isEmpty ? Color.borderColor.opacity(0.5) : Color.accentGold)
+                        .cornerRadius(6)
                 }
                 .disabled(vm.placedBlocks.isEmpty)
 
@@ -198,16 +208,17 @@ struct BlockQuizView: View {
                 Button {
                     onNext()
                 } label: {
-                    HStack {
+                    HStack(spacing: 8) {
                         Image(systemName: "checkmark.circle.fill")
-                        Text("正解！次のレッスンへ")
+                            .font(.system(size: 14))
+                        Text("正解！次へ")
                     }
-                    .font(.system(size: 16, weight: .bold))
+                    .font(.system(size: 14, weight: .bold))
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity)
-                    .padding(.vertical, 14)
+                    .padding(.vertical, 12)
                     .background(Color.successGreen)
-                    .cornerRadius(8)
+                    .cornerRadius(6)
                 }
 
             case .incorrect:
@@ -216,16 +227,17 @@ struct BlockQuizView: View {
                     showResult = false
                     showResultTable = false
                 } label: {
-                    HStack {
+                    HStack(spacing: 8) {
                         Image(systemName: "arrow.counterclockwise")
-                        Text("もう一度挑戦する")
+                            .font(.system(size: 14))
+                        Text("もう一度")
                     }
-                    .font(.system(size: 16, weight: .bold))
+                    .font(.system(size: 14, weight: .bold))
                     .foregroundColor(.white)
                     .frame(maxWidth: .infinity)
-                    .padding(.vertical, 14)
+                    .padding(.vertical, 12)
                     .background(Color.errorRed)
-                    .cornerRadius(8)
+                    .cornerRadius(6)
                 }
             }
         }
@@ -233,11 +245,12 @@ struct BlockQuizView: View {
 
     private var resultTable: some View {
         VStack(alignment: .leading, spacing: 8) {
-            HStack {
+            HStack(spacing: 6) {
                 Image(systemName: "tablecells.fill")
+                    .font(.system(size: 13))
                     .foregroundColor(.accentGold)
                 Text("実行結果")
-                    .font(.system(size: 14, weight: .semibold))
+                    .font(.system(size: 13, weight: .semibold))
                     .foregroundColor(.headerBrown)
             }
 
@@ -247,11 +260,11 @@ struct BlockQuizView: View {
                     HStack(spacing: 0) {
                         ForEach(vm.problem.resultTableData.headers, id: \.self) { header in
                             Text(header)
-                                .font(.system(size: 13, weight: .semibold))
+                                .font(.system(size: 12, weight: .semibold))
                                 .foregroundColor(.white)
-                                .frame(minWidth: 90, alignment: .leading)
-                                .padding(.horizontal, 10)
-                                .padding(.vertical, 8)
+                                .frame(minWidth: 80, alignment: .leading)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 7)
                                 .background(Color.accentGold)
                                 .border(Color.white.opacity(0.3), width: 0.5)
                         }
@@ -262,21 +275,21 @@ struct BlockQuizView: View {
                         HStack(spacing: 0) {
                             ForEach(vm.problem.resultTableData.rows[i], id: \.self) { cell in
                                 Text(cell)
-                                    .font(.system(size: 13, design: .monospaced))
+                                    .font(.system(size: 12, design: .monospaced))
                                     .foregroundColor(.headerBrown)
-                                    .frame(minWidth: 90, alignment: .leading)
-                                    .padding(.horizontal, 10)
-                                    .padding(.vertical, 8)
+                                    .frame(minWidth: 80, alignment: .leading)
+                                    .padding(.horizontal, 8)
+                                    .padding(.vertical, 7)
                                     .background(i % 2 == 0 ? Color.appBackground : Color.white)
                                     .border(Color.borderColor.opacity(0.3), width: 0.5)
                             }
                         }
                     }
                 }
-                .cornerRadius(6)
+                .cornerRadius(5)
                 .overlay(
-                    RoundedRectangle(cornerRadius: 6)
-                        .stroke(Color.borderColor.opacity(0.5), lineWidth: 1)
+                    RoundedRectangle(cornerRadius: 5)
+                        .stroke(Color.accentGold.opacity(0.3), lineWidth: 1)
                 )
             }
         }
@@ -305,14 +318,14 @@ private struct BlockTile: View {
 
     var body: some View {
         Text(text)
-            .font(.system(size: 14, weight: .semibold, design: .monospaced))
+            .font(.system(size: 13, weight: .semibold, design: .monospaced))
             .foregroundColor(foregroundColor)
-            .padding(.horizontal, 12)
-            .padding(.vertical, 8)
+            .padding(.horizontal, 10)
+            .padding(.vertical, 6)
             .background(backgroundColor)
-            .cornerRadius(6)
+            .cornerRadius(5)
             .overlay(
-                RoundedRectangle(cornerRadius: 6)
+                RoundedRectangle(cornerRadius: 5)
                     .stroke(borderColor, lineWidth: 1.5)
             )
     }
@@ -331,22 +344,22 @@ private struct BlockTile: View {
 
     private var backgroundColor: Color {
         switch style {
-        case .available: return .white
+        case .available: return Color.accentGold.opacity(0.12)
         case .placed:
             switch state {
-            case .answering: return Color.editorBackground
-            case .correct: return Color.successGreen.opacity(0.8)
-            case .incorrect: return Color.errorRed.opacity(0.8)
+            case .answering: return Color.accentGold.opacity(0.2)
+            case .correct: return Color.successGreen.opacity(0.85)
+            case .incorrect: return Color.errorRed.opacity(0.85)
             }
         }
     }
 
     private var borderColor: Color {
         switch style {
-        case .available: return Color.borderColor.opacity(0.5)
+        case .available: return Color.accentGold.opacity(0.4)
         case .placed:
             switch state {
-            case .answering: return Color.accentGold.opacity(0.7)
+            case .answering: return Color.accentGold
             case .correct: return Color.successGreen
             case .incorrect: return Color.errorRed
             }
