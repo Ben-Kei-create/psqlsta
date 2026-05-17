@@ -1,0 +1,411 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 63;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B4137CA83F04B9D1A2CB76F /* QueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89785124A042E84EAAE3EA0D /* QueryResult.swift */; };
+		0F3CB6685E8A6FA86B16CB8A /* SQLKeyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23094A852CDB1023D4004AB2 /* SQLKeyword.swift */; };
+		1231D2DFE7F98510707FFADA /* BlockQuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1967156975C520B252644D /* BlockQuizViewModel.swift */; };
+		150DC53D0DBBE11787EBA14D /* SQLCafeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35775E4C10709D3A33D6391 /* SQLCafeApp.swift */; };
+		2C560F909A628B23F98698E9 /* TableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B8ADC3992E177FD7160ACCC /* TableData.swift */; };
+		376C2E890B3C494C5D48D3C5 /* SQLEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44CCC841C071FC33E1A6CE6 /* SQLEditorView.swift */; };
+		3D253F13437A05D40B3C6338 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C222FDF58EB9EA4261020836 /* Colors.swift */; };
+		4B7389067A4BEACE7C7D8FB4 /* BlockQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029024A5BBE003080757308E /* BlockQuizView.swift */; };
+		6CBC644124766C2627E0ACCE /* ProblemStatementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FB87BBD5B0F31BFB6EA343 /* ProblemStatementView.swift */; };
+		90CE84F3AFFCF8A9999DDCEF /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9313A16731F3F94F678621DF /* PreviewContainer.swift */; };
+		93401932B7BCDB105E3C7E7F /* SQLQueryEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACB92042FDE22F8A3B05B04 /* SQLQueryEditorView.swift */; };
+		955CC0BD76267314E35ADB58 /* SQLEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEEA09D19DD9E4A616D1955 /* SQLEditorViewModel.swift */; };
+		A2A6112C3F179B8B352A5A02 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C18D7DB8D005AED8D9192E /* DummyData.swift */; };
+		CC15D01781134734E2B58D11 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9AE8FFAAAB0B92915687896 /* HomeView.swift */; };
+		E70D2786DCE69C87C895B955 /* Problem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB300AB74833CF924A77182B /* Problem.swift */; };
+		EF8F271121C66C4AF019DEF2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3AE2BCCDE5E80226665B98 /* Constants.swift */; };
+		F0B043D3204F2DF4A890CFB0 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E0A3915D2D5FF1018D95A /* NavigationBarView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		029024A5BBE003080757308E /* BlockQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockQuizView.swift; sourceTree = "<group>"; };
+		0B8ADC3992E177FD7160ACCC /* TableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableData.swift; sourceTree = "<group>"; };
+		16FB87BBD5B0F31BFB6EA343 /* ProblemStatementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemStatementView.swift; sourceTree = "<group>"; };
+		23094A852CDB1023D4004AB2 /* SQLKeyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLKeyword.swift; sourceTree = "<group>"; };
+		2FECC2CB0234FA8B884106E1 /* SQLCafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SQLCafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ACB92042FDE22F8A3B05B04 /* SQLQueryEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLQueryEditorView.swift; sourceTree = "<group>"; };
+		6C3AE2BCCDE5E80226665B98 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		77D1A268812C6D3444D15593 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		89785124A042E84EAAE3EA0D /* QueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryResult.swift; sourceTree = "<group>"; };
+		9313A16731F3F94F678621DF /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
+		A1C18D7DB8D005AED8D9192E /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
+		A9AE8FFAAAB0B92915687896 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		ACEEA09D19DD9E4A616D1955 /* SQLEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLEditorViewModel.swift; sourceTree = "<group>"; };
+		BA1967156975C520B252644D /* BlockQuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockQuizViewModel.swift; sourceTree = "<group>"; };
+		C222FDF58EB9EA4261020836 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		CB300AB74833CF924A77182B /* Problem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem.swift; sourceTree = "<group>"; };
+		D35775E4C10709D3A33D6391 /* SQLCafeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLCafeApp.swift; sourceTree = "<group>"; };
+		F29E0A3915D2D5FF1018D95A /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
+		F44CCC841C071FC33E1A6CE6 /* SQLEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLEditorView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		17D2271D45C842ECA1EC5F3D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				029024A5BBE003080757308E /* BlockQuizView.swift */,
+				A9AE8FFAAAB0B92915687896 /* HomeView.swift */,
+				F44CCC841C071FC33E1A6CE6 /* SQLEditorView.swift */,
+				704D93432618E4BE75F4051B /* Components */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2053AE89EE52D110F0347A7F = {
+			isa = PBXGroup;
+			children = (
+				A8AEFEC52CDBF72037E9B63C /* SQLCafe */,
+				ECFC6BC8A301AA887FBA98C2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		23FB466C28507E349C848274 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BA1967156975C520B252644D /* BlockQuizViewModel.swift */,
+				ACEEA09D19DD9E4A616D1955 /* SQLEditorViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		2567FF10E0C1AB9CD9A48B4E /* Previews */ = {
+			isa = PBXGroup;
+			children = (
+				9313A16731F3F94F678621DF /* PreviewContainer.swift */,
+			);
+			path = Previews;
+			sourceTree = "<group>";
+		};
+		2C94B437EC77B1DAF070B2FD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6C3AE2BCCDE5E80226665B98 /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		704D93432618E4BE75F4051B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F29E0A3915D2D5FF1018D95A /* NavigationBarView.swift */,
+				16FB87BBD5B0F31BFB6EA343 /* ProblemStatementView.swift */,
+				4ACB92042FDE22F8A3B05B04 /* SQLQueryEditorView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A8AEFEC52CDBF72037E9B63C /* SQLCafe */ = {
+			isa = PBXGroup;
+			children = (
+				77D1A268812C6D3444D15593 /* Info.plist */,
+				D35775E4C10709D3A33D6391 /* SQLCafeApp.swift */,
+				E10125AAA8F2CA4F174FD932 /* Assets */,
+				E19FBF1EB041F2F246080FCB /* Models */,
+				2567FF10E0C1AB9CD9A48B4E /* Previews */,
+				2C94B437EC77B1DAF070B2FD /* Utils */,
+				23FB466C28507E349C848274 /* ViewModels */,
+				17D2271D45C842ECA1EC5F3D /* Views */,
+			);
+			path = SQLCafe;
+			sourceTree = "<group>";
+		};
+		E10125AAA8F2CA4F174FD932 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C222FDF58EB9EA4261020836 /* Colors.swift */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		E19FBF1EB041F2F246080FCB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A1C18D7DB8D005AED8D9192E /* DummyData.swift */,
+				CB300AB74833CF924A77182B /* Problem.swift */,
+				89785124A042E84EAAE3EA0D /* QueryResult.swift */,
+				23094A852CDB1023D4004AB2 /* SQLKeyword.swift */,
+				0B8ADC3992E177FD7160ACCC /* TableData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ECFC6BC8A301AA887FBA98C2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2FECC2CB0234FA8B884106E1 /* SQLCafe.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		31906B91AFB13A87F136A3C6 /* SQLCafe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D9C4EFF8906E7D934C3B82B /* Build configuration list for PBXNativeTarget "SQLCafe" */;
+			buildPhases = (
+				8FA648C1E2C9ABF6F336135A /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SQLCafe;
+			packageProductDependencies = (
+			);
+			productName = SQLCafe;
+			productReference = 2FECC2CB0234FA8B884106E1 /* SQLCafe.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C0BC0086B5AEF77561026FDA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = 06D4ADBB71BE8992C43C2341 /* Build configuration list for PBXProject "SQLCafe" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 2053AE89EE52D110F0347A7F;
+			minimizedProjectReferenceProxies = 1;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				31906B91AFB13A87F136A3C6 /* SQLCafe */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8FA648C1E2C9ABF6F336135A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B7389067A4BEACE7C7D8FB4 /* BlockQuizView.swift in Sources */,
+				1231D2DFE7F98510707FFADA /* BlockQuizViewModel.swift in Sources */,
+				3D253F13437A05D40B3C6338 /* Colors.swift in Sources */,
+				EF8F271121C66C4AF019DEF2 /* Constants.swift in Sources */,
+				A2A6112C3F179B8B352A5A02 /* DummyData.swift in Sources */,
+				CC15D01781134734E2B58D11 /* HomeView.swift in Sources */,
+				F0B043D3204F2DF4A890CFB0 /* NavigationBarView.swift in Sources */,
+				90CE84F3AFFCF8A9999DDCEF /* PreviewContainer.swift in Sources */,
+				E70D2786DCE69C87C895B955 /* Problem.swift in Sources */,
+				6CBC644124766C2627E0ACCE /* ProblemStatementView.swift in Sources */,
+				0B4137CA83F04B9D1A2CB76F /* QueryResult.swift in Sources */,
+				150DC53D0DBBE11787EBA14D /* SQLCafeApp.swift in Sources */,
+				376C2E890B3C494C5D48D3C5 /* SQLEditorView.swift in Sources */,
+				955CC0BD76267314E35ADB58 /* SQLEditorViewModel.swift in Sources */,
+				0F3CB6685E8A6FA86B16CB8A /* SQLKeyword.swift in Sources */,
+				93401932B7BCDB105E3C7E7F /* SQLQueryEditorView.swift in Sources */,
+				2C560F909A628B23F98698E9 /* TableData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		14639A1F05052ABD4BC1FC22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 7R927F3U4V;
+				INFOPLIST_FILE = SQLCafe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sqlcafe.app;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		753820844F2D5D2908095959 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 7R927F3U4V;
+				INFOPLIST_FILE = SQLCafe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sqlcafe.app;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B9F19C8E57112EA6D550EE80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		BFC50183A63BFA84E1F72899 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		06D4ADBB71BE8992C43C2341 /* Build configuration list for PBXProject "SQLCafe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9F19C8E57112EA6D550EE80 /* Debug */,
+				BFC50183A63BFA84E1F72899 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4D9C4EFF8906E7D934C3B82B /* Build configuration list for PBXNativeTarget "SQLCafe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				753820844F2D5D2908095959 /* Debug */,
+				14639A1F05052ABD4BC1FC22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C0BC0086B5AEF77561026FDA /* Project object */;
+}
