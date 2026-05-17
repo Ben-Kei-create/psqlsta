@@ -41,7 +41,7 @@ struct BlockQuizView: View {
                 }
             }
         }
-        .onChange(of: vm.quizState) { _, state in
+        .onChange(of: vm.quizState) { state in
             if state == .correct {
                 withAnimation(.spring()) { showResult = true }
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
