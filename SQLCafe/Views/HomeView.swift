@@ -55,13 +55,12 @@ struct HomeView: View {
     private var header: some View {
         VStack(spacing: 4) {
             Text("☕ SQL Cafe")
-                .font(.englishTitle(size: 28))
+                .font(.system(size: 28, weight: .heavy))
                 .foregroundColor(.headerBrown)
 
             Text("今日のレッスンメニュー")
                 .font(.japaneseBody(size: 14))
-                .foregroundColor(.subtleText)
-
+                .font(.system(size: 14))
             progressBar
                 .padding(.top, 8)
         }
